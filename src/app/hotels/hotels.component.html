@@ -1,0 +1,38 @@
+    <div *ngIf="hotels">
+      <div><h3>{{title}}</h3></div>
+      <div class="col-md-4">
+        <div class="panel panel-default heigted">
+          <div class="panel-heading">{{h.name}}</div>
+          <div class="panel-body">
+            <img class="img-thumbnail img-rounded btn" (click)="onProductDetails(h)" [src]="this.catService.host+'/photoHotels/'+h.id+'?ts='+getTS()"/>
+            <div>
+              <button (click)="onEditPhoto(h)">
+                <span class="glyphicon glyphicon-edit"></span>
+              </button>
+              <p *ngIf="editPhoto && currentHotel==h">
+                <input type="file" (change)="onSelectedFile($event)">
+                <button class="btn btn-success" (click)="uploadPhoto()">Upload</button>
+                {{progress}}
+              </p>
+            </div>
+            <div>
+              {{h.description}}
+            </div>
+            <div>
+              <label>Price : {{h.currentPrice|number:'0.00'}}</label>
+            </div>
+            <div>
+              <span *ngIf="h.promotion">
+                      <img src="assets/images/promo.png" class="img-thumbnail img-circle" height="30">
+                    </span>
+              <span *ngIf="h.selected">
+                      <img src="assets/images/favorite.png" class="img-thumbnail img-circle" height="30">
+                    </span>
+              <span *ngIf="h.available">
+                      <img src="assets/images/available.png" class="img-thumbnail img-circle"  height="30">
+                    </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

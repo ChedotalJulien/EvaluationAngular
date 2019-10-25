@@ -1,0 +1,75 @@
+<!--
+<div *ngIf="currentHotel">
+    <div class="panel panel-default" *ngIf="mode==0">
+      <div class="panel-heading">Fiche Hotel : {{currentHotel.name}}
+        <span class="glyphicon glyphicon-edit pull-right btn" (click)="onEditHotel()"></span>
+      </div>
+      <div class="panel-body">
+        <div class="col-md-5">
+          <img class="img-thumbnail">
+        <div>
+
+          <span *ngIf="currentHotel.promotion">
+                  <img src="assets/images/promo.png" class="img-thumbnail img-circle" height="30">
+                </span>
+            <span *ngIf="currentHotel.selected">
+                  <img src="assets/images/favorite.png" class="img-thumbnail img-circle" height="30">
+                </span>
+            <span *ngIf="currentHotel.available">
+                  <img src="assets/images/available.png" class="img-thumbnail img-circle"  height="30">
+                </span>
+          </div>
+          <div>
+            <form #f="ngForm" (ngSubmit)="">
+              <label class="control-label">Quantité :</label>
+              <input type="number" name="quantity" [(ngModel)]="currentHotel.quantity" ngModel style="width: 40px">
+              <button>
+                <img src="">
+              </button>
+            </form>
+          </div>
+
+        </div>
+        <div class="col-md-7">
+          <div class="panel panel-default" style="min-height: 300px">
+            <div class="panel-body">
+              <label>Price : {{currentHotel.currentPrice|number:'0.00'}}</label>
+            </div>
+            <div class="panel-body">
+              Description :{{currentHotel.description}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="mode==1">
+      <form #f="ngForm" (ngSubmit)="onUpdateHotel(f.value)">
+        <div class="form-group">
+          <label class="control-label">Name:</label>
+          <input type="text" name="name" ngModel [(ngModel)]="currentHotel.name" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="control-label">Description:</label>
+          <textarea name="description" ngModel [(ngModel)]="currentHotel.description" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+          <label class="control-label">Price:</label>
+          <input type="text" name="currentPrice" ngModel [(ngModel)]="currentHotel.currentPrice" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="control-label">Promotion:</label>
+          <input type="checkbox" name="promotion" ngModel [(ngModel)]="currentHotel.promotion" >
+        </div>
+        <div class="form-group">
+          <label class="control-label">Sélection:</label>
+          <input type="checkbox" name="selected" ngModel [(ngModel)]="currentHotel.selected" >
+        </div>
+        <div class="form-group">
+          <label class="control-label">Available:</label>
+          <input type="checkbox" name="available" ngModel [(ngModel)]="currentHotel.available" >
+        </div>
+        <button class="btn btn-success" type="submit">Update</button>
+      </form>
+    </div>
+</div>
+-->
